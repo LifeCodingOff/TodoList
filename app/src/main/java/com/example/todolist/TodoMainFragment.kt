@@ -231,7 +231,6 @@ class TodoMainFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_toolbar, menu)
-
         super.onCreateOptionsMenu(menu, inflater)
     }
 

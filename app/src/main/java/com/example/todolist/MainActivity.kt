@@ -19,14 +19,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
 
+
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
-        toggle = ActionBarDrawerToggle(this, binding.drawer, R.string.drawer_opened, R.string.drawer_closed)
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        toggle.syncState()
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentCon, TodoMainFragment())
@@ -36,16 +32,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val menuInflater = menuInflater
         menuInflater.inflate(R.menu.menu_toolbar, menu)
+
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-
-        if(toggle.onOptionsItemSelected(item)){
-            return true
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
 }
